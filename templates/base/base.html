@@ -1,0 +1,22 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>{%block title %}Título {% endblock %}</title>
+</head>
+<body>
+	{% block header %}
+	<h4>Bloque base</h4>
+	{% endblock %}
+
+	{% block content %}
+	<h4>Contenido archibo base</h4>
+	{% endblock %}
+
+	{% block footer%}
+	<h5>Footer base</h5>
+	{% endblock %}
+
+</body>
+</html>
