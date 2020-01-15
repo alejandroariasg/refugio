@@ -1,10 +1,15 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<form action="post">
+<form method="post">
     {% csrf_token %}
-    {{ forms.as_p }}
-    {{form2.as_p}}
-
+    
+    <div class="row">
+    	<div class="form-group">
+    		<label for="{{ form2.nombre.label }}"> {{ form2.nombre.label }} </label>
+    		{{form2.nombre}}
+    	</div>
+    </div>
+    <button type="submint">Guardar</button>
 </form>
 {% endblock %}
