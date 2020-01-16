@@ -1,15 +1,63 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    
-    <div class="row">
-    	<div class="form-group">
-    		<label for="{{ form2.nombre.label }}"> {{ form2.nombre.label }} </label>
-    		{{form2.nombre}}
-    	</div>
+<form class="form-horizontal" role="form" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label class="col-lg-2 control-label" for="{{ form2.nombre.label }}">{{ form2.nombre.label }}</label>
+    <div class="col-lg-10">
+      {{form2.nombre}}
     </div>
-    <button type="submint">Guardar</button>
+  </div>
+  <div class="form-group">
+    <label for="{{ form2.apellidos.label }}" class="col-lg-2 control-label">{{ form2.apellidos.label }}</label>
+    <div class="col-lg-10">
+    	{{ form2.apellidos }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="{{ form2.edad.label }}" class="col-lg-2 control-label">{{ form2.edad.label }}</label>
+    <div class="col-lg-10">
+    	{{ form2.edad }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="{{ form2.telefono.label }}" class="col-lg-2 control-label">{{ form2.telefono.label }}</label>
+    <div class="col-lg-10">
+    	{{ form2.telefono }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="{{ form2.email.label }}" class="col-lg-2 control-label">{{ form2.email.label }}</label>
+    <div class="col-lg-10">
+    	{{ form2.email }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="{{ form2.domicilio.label }}" class="col-lg-2 control-label">{{ form2.domicilio.label }}</label>
+    <div class="col-lg-10">
+    	{{ form2.domicilio }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="{{ form.numero_mascota.label }}" class="col-lg-2 control-label">{{ form.numero_mascota.label }}</label>
+    <div class="col-lg-10">
+    	{{ form.numero_mascota }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="{{ form.razones.label }}" class="col-lg-2 control-label">{{ form.razones.label }}</label>
+    <div class="col-lg-10">
+    	{{ form.razones }}
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </div>
 </form>
 {% endblock %}
