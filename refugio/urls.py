@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
+from django.contrib.auth import login, logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,7 @@ urlpatterns = [
     url(r'^adopcion/', include(('apps.adopcion.urls', 'adopcion'), namespace="adopcion")),
     url(r'^solicitud/', include(('apps.adopcion.urls', 'adopcion'), namespace="solicitud")),
     url(r'^usuario/', include(('apps.usuario.urls', 'usuario'), namespace="usuario")),
+    #url(r'^accounts/login/', LoginView.as_view(template_name='usuario/index.html'), name='login'),
+    url(r'^$', login, {'template_name':'index.html'}, name='login'),
+    url(r'^logout/', logout, name='logout'),
 ]
